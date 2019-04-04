@@ -1,1 +1,1 @@
-[Introdution functional programing](https://thanhngch.github.io/slides/fp.html#)
+- [Introdution functional programing](https://thanhngch.github.io/slides/fp.html#)
