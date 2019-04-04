@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Functioal Programing Intro</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            .hl {
+                color: #0af;
+                background: #222;
+            }
+            .hl2 {
+                color: #f08;
+            }
+            .container{
+                display: flex;
+            }
+            .col{
+                flex: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h1>Giới thiệu lập trình hàm</h1>
+                    <small></small>
+                    <p>
+                        <small>Created by <a href="#">Chí Thanh</a></small>
+                    </p>
+                </section>
+
+                <section data-background="#dddddd">
+                    <h2>Lập trình hàm</h2>
+                    <p class="fragment"><img src="./img/functional.png" alt=""></p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Functional programing language</h2>
+                    <p class="fragment"><b class="hl">Haskell</b>, Ocaml, Erlang/Elixir, Scala</p>
+                    <p class="fragment">Clojure, Common Lisp, Scheme</p>
+                    <p class="fragment">Functional programing in <b class="hl2">Javascript</b></p>
+                </section>
+                <section>
+                    <h3>Imperative Programming</h3>
+                    <p class="fragment">
+                        Lập trình mệnh lệnh sử dụng câu lệnh để thay đổi trạng thái của chương trình. 
+                    </p>
+                    <em class="fragment">Ví dụ C / C++ / PHP/ Javascript / C# / Java.</em>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h3>Declarative Programming</h3>
+                    <p class="fragment">
+                        Lập trình khai báo thể hiện tính logic của sự tính toán và cấu trúc mà không mô tả luồng điều khiển của nó.
+                    </p>
+                    <em class="fragment">Ví dụ SQL query, regular expression, <b class="hl">lập trình hàm</b></em>
+                </section>
+                
+                <section data-background="#dddddd">
+                    <h2>Data structure and algorithm = Program</h2>
+                    <p class="fragment">Introdution <b class="hl2">Haskell</b> language: <br /> Pure functional language</p>
+                </section>
+                <section>
+                    <h2>Data structure</h2>
+                    <p class="fragment">Data type: strong and static</p>
+                    <p class="fragment"><b class="hl">Strongly typed</b> language has stricter typing rules at compile time</p>
+                    <p class="fragment"><b class="hl">Statically typed</b> has the type of a variable is known at compile time.</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Basic data structure</h2>
+                    <p class="fragment">Bool, Int, Float, Double, Char, String</p>
+                    <p class="fragment">List, Tuple</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Data structure and algorithm = Program (next)</h2>
+                    <p class="fragment">Algorithm in Haskell is <b class="hl2">function</b></p>
+                    <p class="fragment">Mọi thứ khác data structure chính là <b>function</b>. Không variable, không class, không object</p>
+                </section>
+                <section>
+                    <h2>Haskell expression</h2>
+                    <p>
+                        <pre class="fragment"><code class="hljs Haskell">5 + 6 -- return 11</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">5 * 6 -- return 30</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">[1,2,3,4] !! 1 -- return 2</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">(+) is function</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">(*), (-), (!!) is function too</code></pre>
+                    </p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Declare and Call Function in Haskell</h2>
+                    <p>
+                        <pre class="fragment"><code class="hljs Haskell">-- Haskell declare function
+add x y = x + y</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">-- Haskell call function
+add 5 6 -- return 11</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">a = 5</code></pre>
+                        <pre class="fragment"><code class="hljs Haskell">a -- is function and return 5</code></pre>
+                        <p class="fragment">No <code class="hl">return</code> keyword, expression everywhere</p>   
+                    </p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Functional Features</h2>
+                    <p class="fragment">Immutability</p>
+                    <p class="fragment">Purity</p>
+                    <p class="fragment">Recursion</p>
+                    <p class="fragment">Higher-Order Functions</p>
+                    <p class="fragment">Currying</p>
+                    <p class="fragment">Composition</p>
+                </section>
+                <section>
+                    <h2>Immutability - Bất biến</h2>
+                    <img src="./img/imutable.jpeg" alt="" style="max-height:400px">
+                </section>
+                <section>
+                    <h2>Immutability - Bất biến (tiếp)</h2>
+                    <pre class="fragment"><code class="hljs Haskell">a = 5 
+a = 5 -- compiler error</code></pre>
+                    <p class="fragment">Impact: no variable, no for, no while</p>
+                </section>
+
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Purity - Thuần túy</h2>
+                    <p> <img src="./img/purity.jpg" alt="" style="max-height:400px"> </p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Purity - Thuần túy (tiếp)</h2>
+                    <p class="fragment">
+                        Không thay đổi data bên ngoài hàm số.
+                    </p>
+                    <pre class="fragment"><code class="hljs js">
+// this function has side effects 
+var z = 10;
+function add(x, y) {
+    z = 20; // change outside data
+    return x + y;
+}
+                    </code></pre>
+                    <p class="fragment">Hệ quả: No <b class="hl2">side effects</b></p>
+                    <p class="fragment">Hệ quả 2: Pure Function sẽ luôn trả về cùng output với cùng input, bất kể có thực hiện bao nhiêu lần</p>
+                </section>
+
+                <section data-background="#dddddd">
+                    <h2 class="">Higher-Order Functions</h2>
+                    <p class="fragment">Agruments as function</p>
+                    <p class="fragment">Return a function</p>
+                </section>
+                
+                <section>
+                    <h2 class="">Recursion - Đệ quy</h2>
+                    <pre class="fragment"><code class="hljs">1, 1, 2, 3, 5, 8, 13, 21,...</code></pre>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+function fibonacci (n) {
+    if (n &lt; 0) {
+        throw new Error("Invalid argument");
+    }
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    return fibonacci (n - 1) + fibonacci (n - 2);
+} 
+                     </code></pre>
+                </section>
+                <section>
+                    <h2 class="">Recursion - Đệ quy (tiếp)</h2>
+                    <pre class="fragment"><code class="hljs haskell">
+-- Haskell
+fibonacci 0 = 1
+fibonacci 1 = 1
+fibonacci n = fibonaci(n-1) + fibonaci(n-2)
+                     </code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Currying</h2>
+                    <p> <img src="./img/curry.png" alt="" style="max-height:400px"> </p>
+                    <p>Curry is important thing in Functional Programing</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Currying (next)</h2>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+add = function (x, y) {
+    return x + y
+}
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs js">
+// arrow way
+add = (x, y) => x + y
+                    </code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Currying (next)</h2>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+add2 = function (x) {
+    return function (y) {
+        return x + y
+    }
+}
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs js">
+// arrow way
+add2 = x => y => x + y
+                    </code></pre>
+                </section>
+<section data-background="#dddddd">
+                    <h2 class="">Currying (next)</h2>
+                    <pre class="fragment"><code class="hljs haskell">
+-- Haskell
+3 + 2
+(+) 3 2
+(+3) 2
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs haskell">
+add x y = x + y
+add20 = add 20
+add20 10 -- return 30
+                    </code></pre>
+                    <p class="fragment">All function in <b class="hl">Haskell</b> is curry function in default</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2 class="">Some useful function</h2>
+                    <pre class="fragment"><code class="hljs js">map; fold; filter</code></pre>
+                    <p class="fragment"><code>Fold</code> in Haskell is <code>Reduce</code> in js</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Map</h2>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+[1, 4, 9, 16].map(x => x * 2); // return [2, 8, 18, 32]
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs haskell">
+-- haskell
+map (*2) [1, 4, 9, 16]
+                    </code></pre>
+                </section>
+                <section>
+                    <h2 class="">reduce</h2>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+const num = [1, 2, 3, 4];
+const total_reducer = (acc, value) => acc + value;
+num.reduce(total_reducer) // return 10
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs haskell">
+-- Haskell
+foldr (+) 0 [1, 2, 3, 4] -- return 10
+                    </code></pre>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                        <h2 class="">Filter</h2>
+                        <pre class="fragment"><code class="hljs js">
+// JS
+var words = ['spray', 'limit', 'elite', 
+    'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+// result = ["exuberant", "destruction", "present"]
+                        </code></pre>
+                        <pre class="fragment"><code class="hljs haskell">
+-- Haskell
+let words = ["spray", "limit", "elite", "exuberant",
+    "destruction", "present"]
+filter ((> 6) . length) words
+-- result = ["exuberant", "destruction", "present"]
+                        </code></pre>
+                </section>
+                
+                <section data-background="#dddddd">
+                    <h2 class="">Composition</h2>
+                    <p><code>(f.g)(x) = f(g(x))</code></p>
+                </section>
+                <section>
+                    <h2 class="">Composition (next)</h2>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+const users = [
+    { name: "Jeff",   age: 14 },
+    { name: "Jack",   age: 18 }, 
+    { name: "Milady", age: 22 },
+]
+const filter = (cb, arr) => arr.filter(cb);
+const map = (cb, arr) => arr.map(cb);
+
+map(u => u.name, filter(u => u.age > 16, users));
+// return ["Jack", "Milady"]
+                    </code></pre>
+                </section>
+                <section>
+                    <h2 class="">Composition (next)</h2>
+                    <pre class="fragment"><code class="hljs js">
+compose(function1, function2, ... , functionN): Function
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs js">
+// JS
+const compose = (...functions) => args => 
+    functions.reduceRight((arg, fn) => fn(arg), args);
+
+const filter = cb => arr => arr.filter(cb);
+const map = cb => arr => arr.map(cb);
+
+compose(
+    map(u => u.name),
+    filter(u => u.age > 16)
+)(users) 
+// return ["Jack", "Milady"]
+                    </code></pre>
+                </section>
+                <section>
+                    <h2 class="">Composition (next)</h2>
+                    <pre class="fragment"><code class="hljs haskell">
+-- Haskell
+let users = [ ("Jeff", 14 ), 
+    ("Jack", 18 ), ("Milady", 22 )]
+
+-- Solution
+map (\(name, _) -> name) 
+    (filter (\(_, age) -> age > 16) users)
+
+-- Another way using composition
+(map (\(name, _) -> name) . 
+    filter (\(_, age) -> age > 16)) users
+-- return ["Jack", "Milady"]
+                    </code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Features overview</h2>
+                    <p class="fragment">Immutability</p>
+                    <p class="fragment">Purity</p>
+                    <p class="fragment">Recursion</p>
+                    <p class="fragment">Higher-Order Functions</p>
+                    <p class="fragment">Currying</p>
+                    <p class="fragment">Composition</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Application of functional</h2>
+                    <p class="fragment">Javascript library: RamdaJs, <b class="hl">Lodash</b></p>
+                    <p class="fragment">Fuctional programing build to Js: <code>Elm, PureScript</code></p>
+                    <p class="fragment">Facebook <b class="hl2">Reason</b></p>
+                    <p class="fragment"><code>Rabbitmq</code></p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Next</h2>
+                    <p class="fragment">Learn functional programing: Haskell, Ocaml, Elixir</p>
+                    <p class="fragment">Advanced: Maybe, Functor, Applicative, Monad</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2 class="">Thanks</h2>
+                    <p>
+                        <small>Created by <a href="#">Chí Thanh</a></small>
+                    </p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/highlight/highlight.js', async: true },
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
