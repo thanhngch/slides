@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Functioal Programing Intro</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            .hl {
+                color: #0af;
+                background: #222;
+            }
+            .hl2 {
+                color: #f08;
+            }
+            .container{
+                display: flex;
+            }
+            .col{
+                flex: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h1>Cơ bản về ngôn ngữ Javascipt</h1>
+                    <small></small>
+                    <p>
+                        <small>Created by <a href="#">Thanh</a></small>
+                    </p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Javascipt</h2>
+                    <p class="fragment">Ngôn ngữ phổ biến nhất năm 2018 (thống kê của Stackoverflow)</p>
+                    <p class="fragment">Được dùng chủ yếu trên trình duyệt và server (NodeJS)</p>
+                    <p class="fragment">Đã được chuẩn hóa ECMA</p>
+                    <p class="fragment">Phiên bản phổ biến ES5 và ES6</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Variable</h2>
+                    <p class="fragment">Primitive và object</p>
+                    <p class="fragment">Primitive gồm: <code class="hl">undefined, number, boolean, string, Symbol</code></p>
+                    <p class="fragment">Còn lại là object; array, function cũng là object</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Variable (tiếp)</h2>
+                    <p class="fragment">number, boolean, string tự động chuyển sang kiểu Object nếu thấy cần thiết</p>
+                    <p class="fragment">number -> Number, boolean -> Boolean, string -> String</p>
+                    <p class="fragment">Ví dụ <code class="hl">(1).toString()</code></p>
+                    <p class="fragment">Ngôn ngữ js là ngôn ngữ kiểu động (không cần khai báo kiểu cho biến) và yếu 
+                            (biến có thể thay đổi kiểu và dữ liệu bất cứ lúc nào)</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Number</h2>
+                    <p class="fragment">Chỉ có dạng số thực không có kiểu nguyên</p>
+                    <p class="fragment">Ngoài ra còn có <code class="hl">NaN, -Infinity, Infinity</code></p>
+                    <p class="fragment">Số 0 có hai dạng hai số <code class="hl">0</code> và <code class="hl">-0</code></p>
+                    <p class="fragment">Biểu diễn số lớn sử dụng e: <code class="hl">1e3 == 1000</code></p>
+                    <p class="fragment">Sử dụng toán tử <code>+, -, *, / và %</code></p>
+                    <p class="fragment">Sử dụng <code>**</code> để tính lũy thừa (ES6)</p>
+                    
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Number (tiếp)</h2>
+                    <p class="fragment">Sử dụng thư viện <code class="hl">Number</code> và <code class="hl">Math</code></p>
+                    <p class="fragment">Chuyển dữ liệu về kiểu Number</p>
+                    <p class="fragment">Number.parseInt(), Number.parseFloat()</p>
+                    <p class="fragment">Toán tử + ví dụ <code class="hljs js">+"10" // 10</code></p>
+                    
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Number (tiếp)</h2>
+                    <p class="fragment">Lưu ý <code class="hljs js">0.1 + 0.2 != 0.3</code></p>
+                    <p class="fragment">và <code class="hljs js">9999999999999999 == 10000000000000000</code></p>
+                    <p class="fragment">Sử dụng <code class="hl">Number.isSafeInteger()</code></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>String</h2>
+                    <p class="fragment">Gồm nhiều character UTF-16 (1 hoặc 2 code unit)</p>
+                    <p class="fragment">Hàm: <code>length, substring, replace, search, split, toUpperCase, indexOf, charAt</code></p>
+                    <p class="fragment"><code class="hl">""</code> và <code class="hl">''</code> có gì khác biệt</p>
+                    <p class="fragment">Sử dụng <code class="hl">``</code> trong ES6</p>
+                    <p class="fragment">Phân biệt <code>substr, substring</code></p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>String</h2>
+                    <p class="fragment"><code>substr(from, length)</code> và <code>substring(from, to)</code></p>
+                    <p class="fragment">Chuyển dữ liệu về String: <code class="hl">a.toString()</code></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Boolean</h2>
+                    <p class="fragment">true hoặc false</p>
+                    <p class="fragment">Dữ liệu nào chuyển về là kiểu false</p>
+                    <p class="fragment">
+                        <code class="hljs js">false, 0, string rỗng (“), NaN, null và undefined; sẽ trở thành false</code>
+                        <p class="fragment">Còn lại là true</p>
+                    </p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Boolean (tiếp)</h2>
+                    <p class="fragment">Chuyển về kiểu Boolean </p>
+                    <p class="fragment"><code class="hljs js">Boolean(a), !(a)</code></p>
+                    <p class="fragment">Toán tử <code class="hl">&&</code>, <code class="hl">||</code> và <code class="hl">!</code></p>
+                    <p class="fragment"><code class="hl2">Truthy</code> và <code class="hl2">Falsy</code></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Boolean (tiếp)</h2>
+                    <p class="fragment"><code class="hl">[]</code> là truthy nhưng nó == false</p>
+                    <p class="fragment">Ví dụ <code class="hl">if ([]) {...}</code></p>
+                    <p class="fragment"><code class="hl">if (a) {}</code> sẽ thực thi khi a là truthy</p>
+                    <p class="fragment"><code class="hl">!!a</code> sẽ tương đương với Boolean(a)</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Boolean (tiếp)</h2>
+                    <p class="fragment">Các toán tử && liên tiếp</p>
+                    <p class="fragment"><code class="hljs js">var name = o && o.name()</code></p>
+                    <p class="fragment">Các toán tử || liên tiếp</p>
+                    <p class="fragment"><code class="hljs js">var name = getName() || 'bill'</code></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Khai báo biến</h2>
+                    <p class="fragment"><code class="hljs js">var, let(ES6), const (ES6)</code></p>
+                    <p class="fragment">var là <code class="hl2">function scope</code></p>
+                    <p class="fragment">Hosting: khai báo var ở đâu trong hàm cũng cho lên đầu hàm</p>
+                    <p class="fragment">let, const là <code class="hl2">block scope</code></p>
+                    <p class="fragment">const không phải là hằng mà nó sẽ không trỏ được đến giá trị khác</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Control flow</h2>
+                    <p class="fragment"><code class="hljs js">for, while, do while, if, if else, switch case, ternary( ? : )</code></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Object</h2>
+                    <p class="fragment">Dữ liệu dạng key : value, trong đó key là string và value là tùy ý</p>
+                    <p class="fragment">Khai báo tương tự JSON nên JSON dùng rất tốt trong JS</p>
+                    <p class="fragment">obj[‘name’] và obj[name] là khác nhau</p>
+                    <pre class="fragment"><code class="hljs js">var a = {
+    [name]: 'bill'
+}</code></pre>
+                    <pre class="fragment"><code class="hljs js">var a = {}; a[name] = ‘bill’ // same above</code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Array</h2>
+                    <p class="fragment">Là một object đặt biệt với các key là số được sắp xếp theo thứ tự</p>
+                    <p class="fragment">Các hàm sử dụng : <code class="hl">concat(), join(), pop(), push(), shift(), unshift(), slice(), split(), splice()</code></p>
+                    <p class="fragment">Dùng <code class="hl">forEach</code> (trong ES5) thay cho for (i = 0, i < n; i++) {}</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Array (tiếp)</h2>
+                    <p class="fragment">Kiểm tra Array rỗng</p>
+                    <p class="fragment">if (a == []) {...} (cách sai) </p>
+                    <p class="fragment"><code>Array.isArray(a)</code> và <code>a.length == 0</code></p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Function</h2>
+                    <p class="fragment">Funtional: return function, variable function, parameter is funtion</p>
+                    <p class="fragment"><code class="hl2">Hosting</code> và <code class="hl2">Closure</code></p>
+                    <p class="fragment"><code class="hl2">IIFEs</code> (Immediately Invoked Function Expressions)</p>
+                    <pre class="fragment"><code class="hljs js">(function() {
+    // nội dung hàm
+})();
+                    </code></pre>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>What is <code class="hl">this</code></h2>
+                    <pre class="fragment"><code class="hljs js">let user = {
+    name: "John",
+    hi() { console.log(this.name); }
+}
+user.hi(); // John
+var hi = user.hi;
+hi(); // error because this is undefied
+                    </code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Custom Object</h2>
+                    <p class="fragment">Toán tử <code class="hl2">new</code> và con trỏ <code class="hl2">this</code></p>
+                    <pre class="fragment"><code class="hljs js">function Person(first, last) {
+    this.first = first;
+    this.last = last;
+    this.fullName = function() {
+        return this.first + ' ' + this.last;
+    };
+}
+var s = new Person('Simon', 'Willison');
+                    </code></pre>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Prototype chain</h2>
+                    <p class="fragment">js is <code class="hl">prototype base</code></p>
+                    <p class="fragment">Everything is Object because is heritance <code>Object.prototype</code></p>
+                    <pre class="fragment"><code class="hljs js">var a = {};
+a.toString();</code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>OOP</h2>
+                    <pre class="fragment"><code class="hljs js">var o = {
+    a: 2,
+    m: function() {
+        return this.a + 1;
+    }
+};
+var p = Object.create(o);
+// p is an object that inherits from o</code></pre>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>OOP</h2>
+                    <pre class="fragment"><code class="hljs js">var d = Object.create(null);</code></pre>
+                    <pre class="fragment"><code class="hljs js">var d = {} // difference above</code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>New type (or Class)</h2>
+                    <p class="fragment"><code class="hl">typeof Number; typeof String; typeof Boolean</code></p>
+                    <p class="fragment"><code class="hl">// return 'function'</code></p>
+                    <pre class="fragment"><code class="hljs js">function newType(){}
+// add a property onto the prototype
+newType.prototype.foo = "bar"; 
+var doSomeInstancing = new newType();</code></pre>
+                    <p class="fragment">Keyword <code class="hl2">class</code> in C++/Java is same <code class="hl">function</code> in JS</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2 class="">Thanks</h2>
+                    <p>
+                        Reference: <br />
+                        <small><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">
+                            https://developer.mozilla.org/A_re-introduction_to_JavaScript</a></small>
+                    </p>
+                </section>
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/highlight/highlight.js', async: true },
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
