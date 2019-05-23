@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Express js introdution</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <style>
+            .hl {
+                color: #0af;
+                background: #222;
+            }
+            .hl2 {
+                color: #f08;
+            }
+            .container{
+                display: flex;
+            }
+            .col{
+                flex: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h1>Express Js</h1>
+                    <small></small>
+                    <p>
+                        <small>Created by <a href="#">Thanh</a></small>
+                    </p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Outline</h2>
+                    <p class="fragment">Express JS</p>
+                    <p class="fragment">Sequelize JS</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Nodejs</h2>
+                    <p class="fragment">Built on Chrome's V8 engine.</p>
+                    <p class="fragment">It's fast</p>
+                    <p class="fragment">Large package eco-system</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Express Js</h2>
+                    <p class="fragment">Minimal web framework like PHP micro framework</p>
+                    <p class="fragment">Can build web api, web app, real time app...</p>
+                    <p class="fragment">Very popular</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Express Js (next)</h2>
+                    <p class="fragment">Create express with <code class="hl2">express-generator</code></p>
+                    <p class="fragment">App, Request, Respone, Router</p>
+                    <p class="fragment">Middleware</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Middleware</h2>
+                    <p class="fragment"><img src="./img/expressjs/middleware.png"></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Library for express Js</h2>
+                    <p class="fragment">View template: ejs, ejs-mate</p>
+                    <p class="fragment">Cookie: Cookie parser</p>
+                    <p class="fragment">Session Handle: connect-redis</p>
+                    <p class="fragment">Authentication: Passportjs</p>
+                    <p class="fragment">Flash Messages: Express Flash</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Library for express Js (next)</h2>
+                    <p class="fragment">Upload file: Multer</p>
+                    <p class="fragment">Realtime: Socketio</p>
+                    <p class="fragment">Database ORM: Sequelizejs</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Sequelize ORM</h2>
+                    <p class="fragment">Create sequelize with <code>sequelize/cli</code></p>
+                    <p class="fragment">Model define</p>
+                    <p class="fragment">Getter, setter</p>
+                    <p class="fragment">Hook</p>
+                    <p class="fragment">Associations: belongTo, hasOne, hasMany, belongsToMany</p>
+                    <p class="fragment">Query</p>
+                    <p class="fragment">Migration</p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Sequelize: model define</h2>
+                    <p class="fragment">In folder <code>models</code> index.js load config file and other js file </p>
+                    <p class="fragment"><code>id</code> is primary key</p>
+                    <p class="fragment"><code>createdAt</code>, <code>updatedAt</code> is datetime type</p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <p><img src="img/expressjs/define_model.png"></p>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Sequelize: hook</h2>
+                    <p class="fragment"><img src="img/expressjs/model_hook.png"></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Sequelize: association</h2>
+                    <p class="fragment"><img src="img/expressjs/model_association_1.png"></p>
+                </section>
+                <section data-background="#dddddd">
+                    <p class="fragment"><img src="img/expressjs/model_association_2.png"></p>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Sequelize: query where which Op</h2>
+                    <pre class="fragment"><code class="hljs js">Project.findAll({
+    where: {
+        id: {
+        [Op.and]: {a: 5},           // AND (a = 5)
+        [Op.or]: [{a: 5}, {a: 6}],  // (a = 5 OR a = 6)
+        [Op.gt]: 6,                // id > 6
+        [Op.gte]: 6,               // id >= 6
+        [Op.lt]: 10,               // id < 10
+        [Op.lte]: 10,              // id <= 10
+    }
+})</code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2>Sequelize: order by</h2>
+                    <pre class="fragment"><code class="hljs js">db.Page.findAll({
+    include: [{
+        model: db.Gallery
+        include: [{
+            model: db.Artwork
+        }]
+    }],
+    order: [
+        [ db.Gallery, 'order', 'DESC' ],
+        [ db.Gallery, db.ArtWork, 'order', 'DESC' ]
+    ]
+})</code></pre>
+                </section>
+                <section data-background="rgba(22, 152, 213, 0.6)">
+                    <h2>Sequelize: instance</h2>
+                    <pre class="fragment"><code class="hljs js">Project.hasMany(Task);
+Task.belongsTo(Project);
+var project = Project.create();
+project.setTasks([task1, task2]).then(() => {
+    // saved!
+});
+project.getTasks({ where: 'id > 10' }).then(tasks => {
+    // tasks with an id greater than 10 :)
+});</code></pre>
+                </section>
+                <section data-background="#dddddd">
+                    <h2 class="">Thanks</h2>
+                </section>
+            </div>
+        </div>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/highlight/highlight.js', async: true },
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
